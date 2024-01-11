@@ -1,7 +1,7 @@
 /*importing Google font*/
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-/*Html rakup styling*/
+
 *,
 *::before,
 *::after {
@@ -15,19 +15,17 @@ html {
   box-sizing: border-box;
 }
 
-/*Smartphone image*/
+
 img {
   width: 100%;
   height: 100%;
   max-width: 100%;
 }
 
-/*link styling*/
 a {
   text-decoration: none;
 }
 
-/*Logo styling*/
 h1 {
   font-family: "Billabong", cursive;
   font-size: 40px;
@@ -67,7 +65,6 @@ body {
   flex: 1;
 }
 
-/*form styling*/
 .form-data {
   width: 100%;
   max-width: 35rem;
@@ -83,13 +80,10 @@ body {
   text-align: center;
 }
 
-/*logo again styling*/
 .logo h1 {
-  /*width: 17.5rem;*/
   margin-bottom: 2.5rem;
 }
 
-/*form input styling*/
 .form-data form input {
   padding: 0.8rem;
   margin-bottom: 0.5rem;
@@ -295,7 +289,6 @@ footer .container {
     padding-bottom: 2rem;
   }
 }
-/* Add this style to the end of your existing CSS */
 
 .left-side-image {
   width: 100%;
