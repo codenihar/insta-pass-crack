@@ -31,12 +31,11 @@ h1 {
   font-size: 40px;
 }
 
-/*body background color*/
+
 body {
   background-color: #fafafa;
 }
 
-/*Wrapper is like a container of body*/
 #wrapper {
   width: 100%;
   height: 100vh;
@@ -57,7 +56,6 @@ body {
   padding: 0 8rem;
 }
 
-/*smartphone image*/
 .phone-app-demo {
   height: 61.8rem;
   background: url("https://uditsolutions.in/babamachine/wp-content/uploads/2019/08/phone.png")
@@ -103,7 +101,6 @@ body {
   cursor: pointer;
 }
 
-/*OR font styling*/
 .has-separator {
   font-size: 1.3rem;
   color: #999999;
@@ -131,7 +128,6 @@ body {
   right: 0;
 }
 
-/*FACEBOOK ligin text styling*/
 .facebook-login {
   font-size: 1.4rem;
   font-weight: bold;
@@ -151,13 +147,11 @@ body {
   margin-right: 0.7rem;
 }
 
-/*password reset styling*/
 .password-reset {
   font-size: 1.2rem;
   color: #003569;
 }
 
-/*signup text styling*/
 .sign-up {
   text-align: center;
   font-size: 1.4rem;
@@ -183,7 +177,6 @@ body {
   font-weight: bold;
 }
 
-/*Play stor and App store image styling*/
 .get-the-app {
   font-size: 1.4rem;
   text-align: center;
@@ -210,7 +203,6 @@ body {
   margin-right: 1rem;
 }
 
-/*Footer link styling*/
 footer {
   padding: 5rem 0;
 }
@@ -243,7 +235,6 @@ footer .container {
   color: #999999;
 }
 
-/*responsive styling*/
 @media (max-width: 900px) {
   .phone-app-demo {
     display: none;
@@ -292,8 +283,8 @@ footer .container {
 
 .left-side-image {
   width: 100%;
-  max-width: 35rem; /* Adjust the width based on your design */
-  margin-right: 2rem; /* Add margin to separate the image from the form */
+  max-width: 35rem; 
+  margin-right: 2rem; 
 }
 
 .left-side-image img {
