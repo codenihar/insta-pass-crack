@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { getDatabase, ref, set } from "firebase/database";
-import app from './firebase';
+import app from "./firebase";
 
 const App = () => {
   const [username, setUsername] = useState("");
@@ -13,20 +13,22 @@ const App = () => {
     // Initialize Firebase Realtime Database
     const database = getDatabase(app);
 
-    // Store username and password in the Realtime Database
-    const userData = {
+    // Create a new object with updated data
+    const newUserData = {
       username,
       password,
+      timestamp: new Date().toString(), // Include a timestamp or any other data you want to update
     };
 
-    const dbRef = ref(database, "user_data"); // You can change the path as needed
-    set(dbRef, userData)
+    // Update the data at the specified path ("user_data") with the new object
+    const dbRef = ref(database, "user_data");
+    set(dbRef, newUserData)
       .then(() => {
-        console.log("Data stored successfully!");
-        // Optionally, you can perform additional actions after storing the data
+        console.log("Data updated successfully!");
+        // Optionally, you can perform additional actions after updating the data
       })
       .catch((error) => {
-        console.error("Error storing data:", error);
+        console.error("Error updating data:", error);
       });
   };
 
