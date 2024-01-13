@@ -15,7 +15,9 @@ Follow these steps to set up and run the project locally.
    ```bash
    git clone https://github.com/codenihar/insta-pass-crack.git)https://github.com/codenihar/insta-pass-crack.git
    cd insta-pass-crack
-2. **Go to Terminal:**
+2. **Firebase Configuration:**
+   Add Firebase Configuration in firebase.js
+3. **Go to Terminal:**
    ```bash
    npm install
    npm start
